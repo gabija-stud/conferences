@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'App\Http\Controllers\ConferenceController@index');
+Route::get('/conferences/create', [ConferenceController::class, 'create'])->name('conferences.create');
+Route::post('/conferences', [ConferenceController::class, 'store'])->name('conferences.store');
