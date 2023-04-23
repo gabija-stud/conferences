@@ -42,4 +42,33 @@
             <button type="submit">Create Conference</button>
         </div>
     </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('form').submit(function () {
+                var name = $('#name').val();
+                var description = $('#description').val();
+                var startDate = $('#start_date').val();
+                var endDate = $('#end_date').val();
+
+                if (name.length < 3 || name.length > 50) {
+                    alert('Name must be between 3 and 50 characters');
+                    return false;
+                }
+
+                if (description.length < 10 || description.length > 500) {
+                    alert('Description must be between 10 and 500 characters');
+                    return false;
+                }
+
+                if (new Date(startDate) >= new Date(endDate)) {
+                    alert('End date must be after start date');
+                    return false;
+                }
+
+                return true;
+            });
+        });
+    </script>
 @endsection
