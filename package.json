@@ -16,7 +16,7 @@
         "sass-loader": "^12.1.0"
     },
     "dependencies": {
-        "bootstrap": "^5.2.1",
+        "bootstrap": "^5.2.3",
         "jquery": "^3.6.1",
         "llama-bootstrap-datetimepicker": "^2.4.4",
         "spectre.css": "^0.5.9"

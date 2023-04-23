@@ -1,13 +1,13 @@
-<!-- resources/views/home.blade.php -->
-
 @extends('layout')
 
 @section('content')
-    <h1>Welcome to the Conference List</h1>
+    <div class="container">
+        <h1 class="display-4">Welcome to the Conference List</h1>
 
-    <ul>
-        @foreach ($conferences as $conference)
-            <li>{{ $conference->name }} - {{ $conference->description }}</li>
-        @endforeach
-    </ul>
+        <ul class="list-group">
+            @foreach ($conferences as $conference)
+                <li class="list-group-item">{{ $conference->name }} - {{ $conference->description }}</li>
+            @endforeach
+        </ul>
+    </div>
 @endsection
