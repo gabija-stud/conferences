@@ -32,4 +32,26 @@ class ConferenceController extends Controller
         return redirect()->route('conferences.index');
     }
 
+    public function edit($id)
+    {
+        $conference = Conference::findOrFail($id);
+        return view('conferences.edit', compact('conference'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $conference = Conference::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required',
+        ]);
+
+        $conference->name = $validatedData['name'];
+        $conference->description = $validatedData['description'];
+        $conference->save();
+
+        return redirect()->route('conferences.show', $conference->id);
+    }
+
 }

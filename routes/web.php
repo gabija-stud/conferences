@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::get('/', 'App\Http\Controllers\ConferenceController@index');
 Route::get('/conferences/create', [ConferenceController::class, 'create'])->name('conferences.create');
 Route::post('/conferences', [ConferenceController::class, 'store'])->name('conferences.store');
+Route::get('/conferences/{id}/edit', [ConferenceController::class, 'edit'])->name('conferences.edit');
+Route::put('/conferences/{id}', [ConferenceController::class, 'update'])->name('conferences.update');
